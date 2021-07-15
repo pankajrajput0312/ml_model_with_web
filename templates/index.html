@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        /* * {
+            background: salmon;
+        } */
+
+        input {
+            background-color: rgb(238, 238, 238);
+            padding: 7px;
+            margin: 4px;
+            width: 20%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #headline {
+            color: aqua;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+            background-color: lemonchiffon;
+            text-align: center;
+        }
+
+        #ans {
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="headline">Iris Classification</h1>
+
+    <form method='POST' action="/">
+        <input type="text" name="sepal_length" placeholder="sepal length">
+        <input type="text" name="sepal_width" placeholder="sepal width">
+        <input type="text" name="petal_length" placeholder="petal length">
+        <input type="text" name="petal_width" placeholder="petal width">
+        <input type="submit">
+    </form>
+
+    {% if your_class %}
+    <h1 id="ans"> flower class is : {{your_class}}</h1>
+    {% endif %}
+</body>
+
+</html>

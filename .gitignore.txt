@@ -1,0 +1,3 @@
+.ipymb_checkpoints/
+.vscode/
+._pycache_/
